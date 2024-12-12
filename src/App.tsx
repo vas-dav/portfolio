@@ -2,7 +2,7 @@ function App() {
 
   return (
     <>
-      <p>Vasily Davydov's portfolio</p>
+      <p>Vasily Davydov</p>
     </>
   )
 }
