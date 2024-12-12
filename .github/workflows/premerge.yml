@@ -10,16 +10,18 @@ on:
       - '**'
 
 jobs:
-  commmit-check:
+  commit-check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Check commit message format
         run: |
-          if [[ ! $(git log -1 --format=%s) =~ ^[a-zA-Z]+: ]]; then
+          if [[ ! $(git log -1 --format=%s) =~ ^[a-zA-Z]+:.* ]]; then
             echo "Error: Commit message does not match the format '<module>: <message>'"
             exit 1
+          fi
+
   build:
     runs-on: ubuntu-latest
     steps:
